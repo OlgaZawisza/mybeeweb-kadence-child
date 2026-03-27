@@ -81,7 +81,7 @@ add_filter( 'kadence_blocks_pro_portfolio_grid_query_args', function ( $args, $a
 add_filter( 'kadence_theme_options_defaults', function ( $defaults ) {
 	return array_merge( $defaults, [
 		'branding_title_layout'       => 'above',
-		'branding_title_inner_layout' => [ 'mobile' => '', 'tablet' => '', 'desktop' => 'fullwidth', 'flag' => true ],
+		'branding_title_inner_layout' => 'fullwidth',
 		'branding_title_background'   => [ 'desktop' => [ 'color' => 'palette1', 'type' => 'color' ], 'flag' => true ],
 		'branding_title_color'        => [ 'color' => 'palette9', 'hover' => '' ],
 		'branding_title_breadcrumb_color' => [ 'color' => 'palette3', 'hover' => 'palette9' ],
