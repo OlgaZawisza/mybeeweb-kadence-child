@@ -1,0 +1,317 @@
+/*
+ * ============================================================
+ *  BRANDING SINGLE — branding-single.css
+ *  Edytuj ten plik żeby zmieniać wygląd strony brandingu.
+ *  Załadowany tylko na stronach post_type=branding.
+ * ============================================================
+ */
+
+/* ---- zmienne lokalne ---- */
+.branding-single {
+	--br-accent:      var(--global-palette1, #f4c619);
+	--br-dark:        var(--global-palette3, #262626);
+	--br-mid:         var(--global-palette4, #262626);
+	--br-muted:       var(--global-palette6, #888);
+	--br-light:       var(--global-palette7, #f5eee8);
+	--br-white:       var(--global-palette9, #ffffff);
+	--br-gap:         80px;
+	--br-container:   1200px;
+}
+
+/* usuń domyślne paddingi Kadence dla tej strony */
+.branding-single .entry-content,
+.branding-single .entry-content-wrap {
+	padding: 0;
+	max-width: none;
+}
+
+/* ============================================================
+   1. HERO
+   ============================================================ */
+.branding-hero {
+	min-height: 340px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 40px;
+}
+
+.branding-hero__inner {
+	text-align: center;
+}
+
+.branding-hero__logo {
+	max-height: 110px;
+	max-width: 300px;
+	width: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+.branding-hero__thumb img {
+	max-height: 130px;
+	width: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+/* ============================================================
+   2. NAGŁÓWEK 2-kol  (jak "PROJEKT / tytuł + rola" w ref.)
+   ============================================================ */
+.branding-naglowek {
+	display: grid;
+	grid-template-columns: 1fr 280px;
+	gap: 60px;
+	padding: 60px 0 50px;
+	border-bottom: 1px solid var(--br-light);
+}
+
+.branding-naglowek__label {
+	display: block;
+	font-size: 11px;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--br-accent);
+	margin-bottom: 14px;
+	font-weight: normal;
+}
+
+.branding-naglowek__tytul {
+	font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+	font-weight: normal;
+	text-transform: uppercase;
+	color: var(--br-dark);
+	margin: 0 0 20px;
+	line-height: 1.2;
+}
+
+.branding-naglowek__opis {
+	font-size: 1rem;
+	line-height: 1.75;
+	color: var(--br-mid);
+}
+
+/* metadata po prawej — jak "ROLA MYBEEWEB:" w ref. */
+.branding-naglowek__prawo {
+	padding-top: 4px;
+}
+
+.branding-meta {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	margin-bottom: 22px;
+}
+
+.branding-meta__label {
+	font-size: 10px;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--br-accent);
+	font-weight: normal;
+}
+
+.branding-meta__wartosc {
+	font-size: 0.95rem;
+	color: var(--br-dark);
+}
+
+/* ============================================================
+   3. SEKCJA WIZJA
+   ============================================================ */
+.branding-wizja {
+	padding: 50px 0;
+	border-bottom: 1px solid var(--br-light);
+}
+
+.branding-sekcja-label {
+	font-size: 10px;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--br-accent);
+	font-weight: normal;
+	margin: 0 0 16px;
+}
+
+.branding-wizja__tresc {
+	font-size: 1rem;
+	line-height: 1.75;
+	color: var(--br-mid);
+	max-width: 720px;
+}
+
+/* ============================================================
+   4. STREFA GUTENBERGA
+   ============================================================ */
+.branding-content-zone {
+	padding: var(--br-gap) 0;
+}
+
+/* ważne: bloki Kadence w tej strefie mają swoje kontenery */
+.branding-content-zone .alignfull,
+.branding-content-zone .alignwide {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* ============================================================
+   5. PALETA KOLORÓW
+   ============================================================ */
+.branding-paleta {
+	padding: var(--br-gap) 0;
+	border-top: 1px solid var(--br-light);
+}
+
+.branding-paleta__kolory {
+	display: flex;
+	gap: 24px;
+	flex-wrap: wrap;
+	margin-top: 24px;
+}
+
+.branding-kolor {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	min-width: 110px;
+}
+
+.branding-kolor__swatch {
+	height: 80px;
+	border-radius: 4px;
+	border: 1px solid rgba(0,0,0,0.06);
+}
+
+.branding-kolor__nazwa {
+	font-size: 0.85rem;
+	color: var(--br-dark);
+	font-weight: 500;
+}
+
+.branding-kolor__hex {
+	font-family: monospace;
+	font-size: 0.75rem;
+	color: var(--br-muted);
+	letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   6. LOGO WARIANTY
+   ============================================================ */
+.branding-logo {
+	padding: var(--br-gap) 0;
+	border-top: 1px solid var(--br-light);
+}
+
+.branding-logo__grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2px;
+	margin-top: 24px;
+}
+
+.branding-logo__wariant {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	padding: 50px 40px;
+	background: var(--br-light);
+}
+
+.branding-logo__wariant--ciemne {
+	/* background ustawiane inline z kolorem marki */
+}
+
+.branding-logo__wariant img {
+	max-height: 90px;
+	max-width: 240px;
+	width: auto;
+}
+
+.branding-logo__wariant span {
+	font-size: 10px;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	color: var(--br-muted);
+}
+
+.branding-logo__wariant--ciemne span {
+	color: rgba(255,255,255,0.6);
+}
+
+/* ============================================================
+   7. NAWIGACJA
+   ============================================================ */
+.branding-nawigacja {
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	align-items: center;
+	gap: 20px;
+	padding: 40px 0;
+	border-top: 1px solid var(--br-light);
+	margin-top: var(--br-gap);
+}
+
+.branding-nawigacja a {
+	font-size: 11px;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--br-dark);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.branding-nawigacja a:hover {
+	color: var(--br-accent);
+}
+
+.branding-nawigacja__all a {
+	border: 1px solid var(--br-dark);
+	padding: 10px 22px;
+	display: inline-block;
+}
+
+.branding-nawigacja__all a:hover {
+	border-color: var(--br-accent);
+}
+
+.branding-nawigacja__next {
+	text-align: right;
+}
+
+/* ============================================================
+   RESPONSYWNOŚĆ
+   ============================================================ */
+@media (max-width: 900px) {
+	.branding-naglowek {
+		grid-template-columns: 1fr;
+		gap: 30px;
+		padding: 40px 0;
+	}
+
+	.branding-logo__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.branding-nawigacja {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+
+	.branding-nawigacja__next {
+		text-align: center;
+	}
+}
+
+@media (max-width: 600px) {
+	.branding-hero {
+		min-height: 240px;
+		padding: 40px 20px;
+	}
+
+	.branding-single {
+		--br-gap: 50px;
+	}
+}
