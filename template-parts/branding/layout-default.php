@@ -155,33 +155,33 @@ $znak2_opis      = get_field( 'branding_znak2_opis' );
 	<?php endif; ?>
 
 	<!-- =============================================
-	     7. ZNAKI WIZUALNE (pod logo)
+	     7. ZNAKI WIZUALNE (pod logo, obok siebie)
 	     ============================================= -->
-	<?php if ( $znak1_obraz ) : ?>
-	<section class="branding-znak site-container">
-		<h2 class="branding-sekcja-label">Znak wizualny</h2>
-		<div class="branding-znak__wrap">
-			<div class="branding-znak__obraz">
-				<img src="<?php echo esc_url( $znak1_obraz['url'] ); ?>"
-				     alt="<?php echo esc_attr( $znak1_obraz['alt'] ?: 'Znak wizualny' ); ?>">
+	<?php if ( $znak1_obraz || $znak2_obraz ) : ?>
+	<section class="branding-znaki site-container">
+		<h2 class="branding-sekcja-label">Znaki wizualne</h2>
+		<div class="branding-znaki__grid">
+			<?php if ( $znak1_obraz ) : ?>
+			<div class="branding-znak">
+				<div class="branding-znak__obraz">
+					<img src="<?php echo esc_url( $znak1_obraz['url'] ); ?>"
+					     alt="<?php echo esc_attr( $znak1_obraz['alt'] ?: 'Znak wizualny' ); ?>">
+				</div>
+				<?php if ( $znak1_opis ) : ?>
+				<div class="branding-znak__opis"><?php echo wp_kses_post( nl2br( $znak1_opis ) ); ?></div>
+				<?php endif; ?>
 			</div>
-			<?php if ( $znak1_opis ) : ?>
-			<div class="branding-znak__opis"><?php echo wp_kses_post( nl2br( $znak1_opis ) ); ?></div>
 			<?php endif; ?>
-		</div>
-	</section>
-	<?php endif; ?>
-
-	<?php if ( $znak2_obraz ) : ?>
-	<section class="branding-znak site-container">
-		<h2 class="branding-sekcja-label">Znak wizualny — wariant</h2>
-		<div class="branding-znak__wrap">
-			<div class="branding-znak__obraz">
-				<img src="<?php echo esc_url( $znak2_obraz['url'] ); ?>"
-				     alt="<?php echo esc_attr( $znak2_obraz['alt'] ?: 'Znak wizualny — wariant' ); ?>">
+			<?php if ( $znak2_obraz ) : ?>
+			<div class="branding-znak">
+				<div class="branding-znak__obraz">
+					<img src="<?php echo esc_url( $znak2_obraz['url'] ); ?>"
+					     alt="<?php echo esc_attr( $znak2_obraz['alt'] ?: 'Znak wizualny — wariant' ); ?>">
+				</div>
+				<?php if ( $znak2_opis ) : ?>
+				<div class="branding-znak__opis"><?php echo wp_kses_post( nl2br( $znak2_opis ) ); ?></div>
+				<?php endif; ?>
 			</div>
-			<?php if ( $znak2_opis ) : ?>
-			<div class="branding-znak__opis"><?php echo wp_kses_post( nl2br( $znak2_opis ) ); ?></div>
 			<?php endif; ?>
 		</div>
 	</section>

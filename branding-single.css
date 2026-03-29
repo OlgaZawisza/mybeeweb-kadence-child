@@ -244,22 +244,21 @@
 /* ============================================================
    7. ZNAKI WIZUALNE
    ============================================================ */
-.branding-znak {
+.branding-znaki {
 	padding: var(--br-gap) 0;
 	border-top: 1px solid var(--br-light);
 }
 
-.branding-znak + .branding-znak {
-	padding-top: 0;
-	border-top: none;
+.branding-znaki__grid {
+	display: flex;
+	gap: 40px;
+	flex-wrap: wrap;
+	margin-top: 24px;
 }
 
-.branding-znak__wrap {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 40px;
-	align-items: center;
-	margin-top: 24px;
+.branding-znak {
+	max-width: 300px;
+	flex: 0 1 300px;
 }
 
 .branding-znak__obraz img {
@@ -269,15 +268,20 @@
 }
 
 .branding-znak__opis {
-	font-size: 1rem;
-	line-height: 1.75;
+	font-size: 0.9rem;
+	line-height: 1.65;
 	color: var(--br-mid);
+	margin-top: 12px;
 }
 
-@media (max-width: 768px) {
-	.branding-znak__wrap {
-		grid-template-columns: 1fr;
-		gap: 24px;
+@media (max-width: 680px) {
+	.branding-znaki__grid {
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	.branding-znak {
+		max-width: 100%;
 	}
 }
 
