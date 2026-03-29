@@ -101,9 +101,10 @@ $logo_na_jasnym  = get_field( 'branding_logo_ciemne' );  // ciemne znaki → jas
 	     ============================================= -->
 	<?php
 	$kolory = array_filter( [
-		[ 'hex' => $kolor1, 'nazwa' => $kolor1_nazwa ],
-		[ 'hex' => $kolor2, 'nazwa' => $kolor2_nazwa ],
-		[ 'hex' => $kolor3, 'nazwa' => $kolor3_nazwa ],
+		[ 'hex' => $hero_bg,  'nazwa' => '' ],
+		[ 'hex' => $kolor1,   'nazwa' => $kolor1_nazwa ],
+		[ 'hex' => $kolor2,   'nazwa' => $kolor2_nazwa ],
+		[ 'hex' => $kolor3,   'nazwa' => $kolor3_nazwa ],
 	], fn( $k ) => ! empty( $k['hex'] ) );
 	?>
 	<?php if ( $kolory ) : ?>
