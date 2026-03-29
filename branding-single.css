@@ -242,7 +242,47 @@
 }
 
 /* ============================================================
-   7. NAWIGACJA
+   7. ZNAKI WIZUALNE
+   ============================================================ */
+.branding-znak {
+	padding: var(--br-gap) 0;
+	border-top: 1px solid var(--br-light);
+}
+
+.branding-znak + .branding-znak {
+	padding-top: 0;
+	border-top: none;
+}
+
+.branding-znak__wrap {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	align-items: center;
+	margin-top: 24px;
+}
+
+.branding-znak__obraz img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.branding-znak__opis {
+	font-size: 1rem;
+	line-height: 1.75;
+	color: var(--br-mid);
+}
+
+@media (max-width: 768px) {
+	.branding-znak__wrap {
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+}
+
+/* ============================================================
+   8. NAWIGACJA
    ============================================================ */
 .branding-nawigacja {
 	display: grid;

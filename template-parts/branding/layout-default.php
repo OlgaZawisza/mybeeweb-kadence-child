@@ -35,6 +35,10 @@ $font_h        = get_field( 'branding_czcionka_naglowki' );
 $font_t        = get_field( 'branding_czcionka_tekst' );
 $logo_na_ciemnym = get_field( 'branding_logo_jasne' );   // jasne znaki → ciemne tło
 $logo_na_jasnym  = get_field( 'branding_logo_ciemne' );  // ciemne znaki → jasne tło
+$znak1_obraz     = get_field( 'branding_znak1_obraz' );
+$znak1_opis      = get_field( 'branding_znak1_opis' );
+$znak2_obraz     = get_field( 'branding_znak2_obraz' );
+$znak2_opis      = get_field( 'branding_znak2_opis' );
 
 ?>
 <article class="branding-single">
@@ -151,7 +155,40 @@ $logo_na_jasnym  = get_field( 'branding_logo_ciemne' );  // ciemne znaki → jas
 	<?php endif; ?>
 
 	<!-- =============================================
-	     7. NAWIGACJA
+	     7. ZNAKI WIZUALNE (pod logo)
+	     ============================================= -->
+	<?php if ( $znak1_obraz ) : ?>
+	<section class="branding-znak site-container">
+		<h2 class="branding-sekcja-label">Znak wizualny</h2>
+		<div class="branding-znak__wrap">
+			<div class="branding-znak__obraz">
+				<img src="<?php echo esc_url( $znak1_obraz['url'] ); ?>"
+				     alt="<?php echo esc_attr( $znak1_obraz['alt'] ?: 'Znak wizualny' ); ?>">
+			</div>
+			<?php if ( $znak1_opis ) : ?>
+			<div class="branding-znak__opis"><?php echo wp_kses_post( nl2br( $znak1_opis ) ); ?></div>
+			<?php endif; ?>
+		</div>
+	</section>
+	<?php endif; ?>
+
+	<?php if ( $znak2_obraz ) : ?>
+	<section class="branding-znak site-container">
+		<h2 class="branding-sekcja-label">Znak wizualny — wariant</h2>
+		<div class="branding-znak__wrap">
+			<div class="branding-znak__obraz">
+				<img src="<?php echo esc_url( $znak2_obraz['url'] ); ?>"
+				     alt="<?php echo esc_attr( $znak2_obraz['alt'] ?: 'Znak wizualny — wariant' ); ?>">
+			</div>
+			<?php if ( $znak2_opis ) : ?>
+			<div class="branding-znak__opis"><?php echo wp_kses_post( nl2br( $znak2_opis ) ); ?></div>
+			<?php endif; ?>
+		</div>
+	</section>
+	<?php endif; ?>
+
+	<!-- =============================================
+	     8. NAWIGACJA
 	     ============================================= -->
 	<nav class="branding-nawigacja site-container">
 		<?php
