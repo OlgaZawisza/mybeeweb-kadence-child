@@ -129,60 +129,62 @@ $znak2_opis      = get_field( 'branding_znak2_opis' );
 	<?php endif; ?>
 
 	<!-- =============================================
-	     6. LOGO WARIANTY
+	     6. LOGO WARIANTY (karty z zaokrąglonymi rogami)
 	     ============================================= -->
 	<?php if ( $logo_na_jasnym || $logo_na_ciemnym ) : ?>
 	<section class="branding-logo site-container">
-		<h2 class="branding-sekcja-label">Logo</h2>
-		<div class="branding-logo__grid">
-			<?php if ( $logo_na_jasnym ) : ?>
-			<div class="branding-logo__wariant branding-logo__wariant--jasne">
-				<img src="<?php echo esc_url( $logo_na_jasnym['url'] ); ?>"
-				     alt="<?php echo esc_attr( $logo_na_jasnym['alt'] ?: 'Logo' ); ?>">
-				<span>wersja podstawowa</span>
+		<div class="branding-logo__layout">
+			<div class="branding-logo__opis">
+				<h2 class="branding-sekcja-label">Logo</h2>
+				<p class="branding-logo__tekst">Warianty znaku graficznego przygotowane do użycia na jasnym i ciemnym tle.</p>
 			</div>
-			<?php endif; ?>
-			<?php if ( $logo_na_ciemnym ) : ?>
-			<div class="branding-logo__wariant branding-logo__wariant--ciemne"
-			     style="background-color:<?php echo esc_attr( $hero_bg ); ?>;">
-				<img src="<?php echo esc_url( $logo_na_ciemnym['url'] ); ?>"
-				     alt="<?php echo esc_attr( $logo_na_ciemnym['alt'] ?: 'Logo' ); ?>">
-				<span style="color:#fff;">wersja odwrócona</span>
+			<div class="branding-logo__karty">
+				<?php if ( $logo_na_jasnym ) : ?>
+				<div class="branding-karta branding-karta--jasne">
+					<img src="<?php echo esc_url( $logo_na_jasnym['url'] ); ?>"
+					     alt="<?php echo esc_attr( $logo_na_jasnym['alt'] ?: 'Logo — wersja podstawowa' ); ?>">
+				</div>
+				<?php endif; ?>
+				<?php if ( $logo_na_ciemnym ) : ?>
+				<div class="branding-karta branding-karta--ciemne" style="background-color:<?php echo esc_attr( $hero_bg ); ?>;">
+					<img src="<?php echo esc_url( $logo_na_ciemnym['url'] ); ?>"
+					     alt="<?php echo esc_attr( $logo_na_ciemnym['alt'] ?: 'Logo — wersja odwrócona' ); ?>">
+				</div>
+				<?php endif; ?>
 			</div>
-			<?php endif; ?>
 		</div>
 	</section>
 	<?php endif; ?>
 
 	<!-- =============================================
-	     7. ZNAKI WIZUALNE (pod logo, obok siebie)
+	     7. ZNAKI WIZUALNE (karty z zaokrąglonymi rogami)
 	     ============================================= -->
 	<?php if ( $znak1_obraz || $znak2_obraz ) : ?>
 	<section class="branding-znaki site-container">
-		<h2 class="branding-sekcja-label">Znaki wizualne</h2>
-		<div class="branding-znaki__grid">
-			<?php if ( $znak1_obraz ) : ?>
-			<div class="branding-znak">
-				<div class="branding-znak__obraz">
+		<div class="branding-znaki__layout">
+			<div class="branding-znaki__opis">
+				<h2 class="branding-sekcja-label">Znaki wizualne</h2>
+				<?php if ( $znak1_opis ) : ?>
+				<p class="branding-znaki__tekst"><?php echo wp_kses_post( nl2br( $znak1_opis ) ); ?></p>
+				<?php endif; ?>
+				<?php if ( $znak2_opis ) : ?>
+				<p class="branding-znaki__tekst"><?php echo wp_kses_post( nl2br( $znak2_opis ) ); ?></p>
+				<?php endif; ?>
+			</div>
+			<div class="branding-znaki__karty">
+				<?php if ( $znak1_obraz ) : ?>
+				<div class="branding-karta branding-karta--jasne">
 					<img src="<?php echo esc_url( $znak1_obraz['url'] ); ?>"
 					     alt="<?php echo esc_attr( $znak1_obraz['alt'] ?: 'Znak wizualny' ); ?>">
 				</div>
-				<?php if ( $znak1_opis ) : ?>
-				<div class="branding-znak__opis"><?php echo wp_kses_post( nl2br( $znak1_opis ) ); ?></div>
 				<?php endif; ?>
-			</div>
-			<?php endif; ?>
-			<?php if ( $znak2_obraz ) : ?>
-			<div class="branding-znak">
-				<div class="branding-znak__obraz">
+				<?php if ( $znak2_obraz ) : ?>
+				<div class="branding-karta branding-karta--jasne">
 					<img src="<?php echo esc_url( $znak2_obraz['url'] ); ?>"
 					     alt="<?php echo esc_attr( $znak2_obraz['alt'] ?: 'Znak wizualny — wariant' ); ?>">
 				</div>
-				<?php if ( $znak2_opis ) : ?>
-				<div class="branding-znak__opis"><?php echo wp_kses_post( nl2br( $znak2_opis ) ); ?></div>
 				<?php endif; ?>
 			</div>
-			<?php endif; ?>
 		</div>
 	</section>
 	<?php endif; ?>

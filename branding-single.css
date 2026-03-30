@@ -196,92 +196,86 @@
 }
 
 /* ============================================================
-   6. LOGO WARIANTY
+   6. LOGO WARIANTY — layout 2-kol (opis | karty)
    ============================================================ */
 .branding-logo {
 	padding: var(--br-gap) 0;
 	border-top: 1px solid var(--br-light);
 }
 
-.branding-logo__grid {
+.branding-logo__layout {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 2px;
-	margin-top: 24px;
-}
-
-.branding-logo__wariant {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 20px;
-	padding: 50px 40px;
-	background: var(--br-light);
-}
-
-.branding-logo__wariant--ciemne {
-	/* background ustawiane inline z kolorem marki */
-}
-
-.branding-logo__wariant img {
-	max-height: 90px;
-	max-width: 240px;
-	width: auto;
-}
-
-.branding-logo__wariant span {
-	font-size: 10px;
-	letter-spacing: 0.15em;
-	text-transform: uppercase;
-	color: var(--br-muted);
-}
-
-.branding-logo__wariant--ciemne span {
-	color: rgba(255,255,255,0.6);
-}
-
-/* ============================================================
-   7. ZNAKI WIZUALNE
-   ============================================================ */
-.branding-znaki {
-	padding: var(--br-gap) 0;
-	border-top: 1px solid var(--br-light);
-}
-
-.branding-znaki__grid {
-	display: flex;
+	grid-template-columns: 30% 1fr;
 	gap: 40px;
-	flex-wrap: wrap;
-	margin-top: 24px;
+	align-items: start;
 }
 
-.branding-znak {
-	max-width: 300px;
-	flex: 0 1 300px;
-}
-
-.branding-znak__obraz img {
-	max-width: 100%;
-	height: auto;
-	display: block;
-}
-
-.branding-znak__opis {
+.branding-logo__tekst {
 	font-size: 0.9rem;
 	line-height: 1.65;
 	color: var(--br-mid);
 	margin-top: 12px;
 }
 
-@media (max-width: 680px) {
-	.branding-znaki__grid {
-		flex-direction: column;
-		gap: 30px;
-	}
+.branding-logo__karty {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
 
-	.branding-znak {
-		max-width: 100%;
+/* ============================================================
+   7. ZNAKI WIZUALNE — layout 2-kol (opis | karty)
+   ============================================================ */
+.branding-znaki {
+	padding: var(--br-gap) 0;
+	border-top: 1px solid var(--br-light);
+}
+
+.branding-znaki__layout {
+	display: grid;
+	grid-template-columns: 30% 1fr;
+	gap: 40px;
+	align-items: start;
+}
+
+.branding-znaki__karty {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+/* ============================================================
+   KARTA — wspólny styl dla logo i znaków wizualnych
+   ============================================================ */
+.branding-karta {
+	background: var(--br-light);
+	border-radius: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 48px;
+}
+
+.branding-karta img {
+	max-width: 100%;
+	max-height: 200px;
+	width: auto;
+	display: block;
+}
+
+.branding-znaki__tekst {
+	font-size: 0.9rem;
+	line-height: 1.65;
+	color: var(--br-mid);
+	margin-top: 12px;
+}
+
+/* Responsywność logo + znaki */
+@media (max-width: 768px) {
+	.branding-logo__layout,
+	.branding-znaki__layout {
+		grid-template-columns: 1fr;
+		gap: 24px;
 	}
 }
 
